@@ -1,7 +1,7 @@
 import { DefineFunction, Schema, SlackFunction } from "deno-slack-sdk/mod.ts";
 
 /**
- * Custom function for sending a message to multiple users
+ * Custom function for sending a message to multiple channels
  */
 
 export const SendMessageChannels = DefineFunction({
