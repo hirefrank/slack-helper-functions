@@ -1,0 +1,18 @@
+{
+  "apps": {
+    "T038J6TH5PF": {
+      "app_id": "A05TKPNHUSK",
+      "IsDev": false,
+      "team_domain": "devrelsandbox",
+      "team_id": "T038J6TH5PF"
+    },
+    "T5J4Q04QG": {
+      "app_id": "A05TXNR48AZ",
+      "enterprise_id": "E12KS1G65",
+      "IsDev": false,
+      "team_domain": "slack-pde",
+      "team_id": "T5J4Q04QG"
+    }
+  },
+  "default": "devrelsandbox"
+}
