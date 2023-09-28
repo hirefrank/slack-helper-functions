@@ -11,9 +11,6 @@ export const SendMessageChannels = DefineFunction({
   source_file: "functions/send_message_channels.ts",
   input_parameters: {
     properties: {
-      from: {
-        type: Schema.slack.types.user_id,
-      },
       channel_ids: {
         type: Schema.types.array,
         items: {
@@ -22,10 +19,10 @@ export const SendMessageChannels = DefineFunction({
         description: "Channels",
       },
       message: {
-        type: Schema.types.string,
+        type: Schema.slack.types.rich_text,
       },
     },
-    required: ["from", "channel_ids", "message"],
+    required: ["channel_ids", "message"],
   },
   output_parameters: {
     properties: {},
@@ -36,14 +33,14 @@ export const SendMessageChannels = DefineFunction({
 export default SlackFunction(
   SendMessageChannels,
   ({ inputs, client }) => {
-    const { channel_ids, message, from } = inputs;
+    const { channel_ids, message } = inputs;
 
     // iterates through userse to send dm
     channel_ids.forEach(async function (channel) {
+      console.log(message);
       const msgResponse = await client.chat.postMessage({
         channel: channel,
-        mrkdwn: true,
-        text: `*From <@${from}>:*\n${message}`,
+        blocks: message,
       });
 
       if (!msgResponse.ok) {
