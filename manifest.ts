@@ -8,7 +8,7 @@ import { SendMessageChannels } from "./functions/send_message_channels.ts";
  * https://api.slack.com/future/manifest
  */
 export default Manifest({
-  name: "Helper Steps",
+  name: "Frank's Helper Steps",
   description: "A bundle of custom steps you wished existed as built-in steps.",
   icon: "assets/digger.png",
   functions: [SendMessageUsers, SendMessageChannels],
